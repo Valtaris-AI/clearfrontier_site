@@ -1,0 +1,66 @@
+/*
+ * CFAI Phosphor Icon Tokens
+ * Brand-specific sizing, color, and weight conventions
+ * Version: 1.0 — matches updated_index.html light theme
+ */
+
+/* ── SIZE SCALE ──────────────────────────────────────────── */
+.ph-sm  { font-size: 16px; }   /* metadata, inline labels      */
+.ph-md  { font-size: 20px; }   /* card icons, nav              */
+.ph-lg  { font-size: 28px; }   /* section feature icons        */
+.ph-xl  { font-size: 40px; }   /* hero / module headers        */
+.ph-2xl { font-size: 56px; }   /* hero illustration-scale      */
+
+/* ── BRAND COLOR TOKENS ──────────────────────────────────── */
+/* Apply to any <i> alongside a weight class */
+.icon-navy       { color: #1A1F4E; }
+.icon-periwinkle { color: #6C72CB; }
+.icon-deep-blue  { color: #2A3172; }
+.icon-amber      { color: #F0A050; }
+.icon-success    { color: #2A8A5A; }
+.icon-muted      { color: #8A8FB0; }
+.icon-white      { color: #FFFFFF; }
+
+/* Dark theme overrides (add .dark-theme to <body> or section) */
+.dark-theme .icon-navy       { color: #DDE8F8; }
+.dark-theme .icon-periwinkle { color: #9BA0E0; }
+.dark-theme .icon-muted      { color: #4A6080; }
+
+/* ── DUOTONE COLOR CONTROL ───────────────────────────────── */
+/*
+  Duotone icons have two layers. Control via CSS custom properties:
+  --ph-duotone-color-1  (primary — defaults to currentColor at 100%)
+  --ph-duotone-color-2  (secondary — defaults to currentColor at 20%)
+
+  CFAI brand duotone combos:
+*/
+.dt-intelligence {
+  color: #6C72CB;
+  --ph-duotone-color-2: rgba(42, 49, 114, 0.25);
+}
+.dt-signals {
+  color: #4A54A0;
+  --ph-duotone-color-2: rgba(74, 200, 232, 0.20);
+}
+.dt-outcomes {
+  color: #2A8A5A;
+  --ph-duotone-color-2: rgba(42, 138, 90, 0.18);
+}
+.dt-governance {
+  color: #1A1F4E;
+  --ph-duotone-color-2: rgba(108, 114, 203, 0.22);
+}
+.dt-amber {
+  color: #F0A050;
+  --ph-duotone-color-2: rgba(240, 160, 80, 0.18);
+}
+
+/* Dark theme duotone */
+.dark-theme .dt-intelligence {
+  color: #9BA0E0;
+  --ph-duotone-color-2: rgba(74, 200, 232, 0.25);
+}
+.dark-theme .dt-signals {
+  color: #4AC8E8;
+  --ph-duotone-color-2: rgba(74, 84, 160, 0.30);
+}
