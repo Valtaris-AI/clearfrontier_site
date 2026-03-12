@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ClearFrontier AI | Decision Intelligence for Retail Operations</title>
-<meta name="description" content="ClearFrontier AI closes the gap between insight and action for retail operators. Decision-ready intelligence delivered before the meeting starts.">
+<meta name="description" content="ClearFrontier AI closes the gap between insight and action for retail operators. Actionable intelligence delivered before the meeting starts.">
+<meta property="og:title" content="ClearFrontier AI | Decision Intelligence for Retail Operations">
+<meta property="og:description" content="Actionable intelligence delivered before the meeting starts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clearfrontier.ai">
+<meta property="og:image" content="https://clearfrontier.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -91,10 +97,10 @@
     min-height: 100vh;
     background: radial-gradient(ellipse 80% 60% at 20% 80%, rgba(74,200,232,0.025) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 20%, rgba(124,130,212,0.03) 0%, transparent 60%), var(--surface);
   }
-  .hero-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .hero-layout { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 48px; align-items: center; }
   .hero-text { max-width: 560px; }
   .hero-text .body-text { max-width: 540px; }
-  .hero-visual { position: relative; width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding-top: 48px; }
+  .hero-visual { position: relative; width: 100%; max-width: 340px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
   #hero::before, #hero::after { content: ''; position: absolute; border-radius: 50%; pointer-events: none; filter: blur(80px); }
   #hero::before { width: 400px; height: 400px; top: 15%; right: -5%; background: radial-gradient(circle, rgba(74,200,232,0.05) 0%, transparent 70%); animation: float1 20s ease-in-out infinite; }
   #hero::after { width: 300px; height: 300px; bottom: 20%; left: -8%; background: radial-gradient(circle, rgba(124,130,212,0.04) 0%, transparent 70%); animation: float2 25s ease-in-out infinite; }
@@ -200,14 +206,7 @@
   .expand-hint::after { content: ''; width: 7px; height: 7px; border-right: 1.5px solid var(--text-muted); border-bottom: 1.5px solid var(--text-muted); transform: rotate(45deg); display: block; }
   .builtfor-item:hover .expand-hint, .builtfor-item.expanded .expand-hint { transform: rotate(180deg); opacity: 0.15; }
 
-  .ss-cap-hint::before, .expand-hint::before {
-    content: 'Click to expand'; position: absolute; bottom: -2px; right: 0;
-    font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px;
-    text-transform: uppercase; color: var(--text-muted); opacity: 0;
-    transition: opacity 0.3s ease; white-space: nowrap;
-  }
-  .ss-cap:hover .ss-cap-hint::before, .builtfor-item:hover .expand-hint::before { opacity: 0.6; }
-  .ss-cap.expanded .ss-cap-hint::before, .builtfor-item.expanded .expand-hint::before { opacity: 0; }
+  .ss-cap-hint::before, .expand-hint::before { display: none; }
 
   /* ===== FOUNDER ===== */
   #founder { background: var(--surface-raised); min-height: auto; padding: 120px 64px; position: relative; }
@@ -235,7 +234,7 @@
   .ss-cap.reveal:nth-child(2){transition-delay:0.1s} .ss-cap.reveal:nth-child(3){transition-delay:0.2s}
   .builtfor-item.reveal:nth-child(2){transition-delay:0.08s} .builtfor-item.reveal:nth-child(3){transition-delay:0.16s} .builtfor-item.reveal:nth-child(4){transition-delay:0.24s}
 
-  @media (max-width: 1024px) { .hero-layout { grid-template-columns: 1fr; gap: 40px; } .hero-visual { max-width: 400px; margin: 0 auto; } }
+  @media (max-width: 1024px) { .hero-layout { grid-template-columns: 1fr; gap: 32px; } .hero-visual { max-width: 280px; margin: 0 auto; } }
   @media (max-width: 900px) {
     section { padding: 80px 28px; } nav { padding: 0 24px; }
     .problem-grid, .ss-capabilities { grid-template-columns: 1fr; }
@@ -249,9 +248,12 @@
     .credential-strip { padding: 24px 28px; }
     .metrics-strip { flex-direction: column; gap: 32px; padding: 48px 28px; }
     footer { padding: 36px 24px; }
+    #hero { overflow: hidden; }
     #hero::before, #hero::after { display: none; }
+    .hero-visual { max-width: 220px; }
     .signal-flow-container { padding: 32px 16px; overflow-x: auto; }
     .signal-flow-svg { min-width: 600px; }
+    .body-text, .problem-card-desc, .ss-cap-desc, .ss-intro, .builtfor-detail, .platform-rung-detail, .platform-rung-desc, .platform-note, .founder-body, .ss-detail { text-align: left; }
     .icon-circle { width: 48px; height: 48px; }
     .icon-circle i { font-size: 28px; }
     .deploy-strip { flex-wrap: wrap; gap: 24px; }
@@ -349,10 +351,9 @@
     z-index: 0;
   }
 </style>
-<link rel="stylesheet" href="icons/regular/style.css">
-<link rel="stylesheet" href="icons/duotone/style.css">
-<link rel="stylesheet" href="icons/fill/style.css">
-<link rel="stylesheet" href="icons/cfai-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 </head>
 <body>
 <nav>
@@ -420,7 +421,7 @@
         <div class="problem-card-content">
           <div class="problem-card-who"><i class="ph ph-map-pin"></i>Planning × Digital</div>
           <div class="problem-card-pain">Markdown on product that's actually misallocated, not overstocked.</div>
-          <div class="problem-card-desc">The excess is in three regions. The other five are at target. E-commerce conversion is up 14% but store-level planning doesn't see it. Art Basel is two weeks out and Miami is over-allocated for a reason, but the system only sees the overage. The markdown was avoidable.</div>
+          <div class="problem-card-desc">Eight regions. Five are at target. Three show excess, but one of them is Miami two weeks before Art Basel, stocked up deliberately. E-commerce conversion is climbing 14% and pulling its own demand. Store planning doesn't see either signal. The system flags overage, triggers a markdown, and erases margin that was never actually at risk.</div>
         </div>
       </div>
       <div class="problem-card reveal">
@@ -454,12 +455,12 @@
     <div class="tag reveal">The Platform</div>
     <h2 class="reveal">The platform is the vision.<br><span class="warm">SentinelSignals is where you start.</span></h2>
     <div class="platform-ladder">
-      <div class="platform-rung rung-now reveal" onclick="toggleRung(this)"><div class="platform-rung-badge">Start here</div><div class="platform-rung-tag">Know before the meeting</div><div class="platform-rung-icon"><div class="icon-circle icon-circle--success"><i class="ph-duotone ph-eye"></i></div></div><div class="platform-rung-name">SentinelSignals</div><div class="platform-rung-desc">Synthesizes what your existing tools already capture into decision-ready signals that span every system and department.</div><div class="platform-rung-detail">Your teams get synthesized briefs, on-demand answers, and early warning alerts. Every function starts with the same context. No new systems to learn, no integration project, no change to who makes decisions.</div></div>
+      <div class="platform-rung rung-now reveal" onclick="toggleRung(this)"><div class="platform-rung-badge">Start here</div><div class="platform-rung-tag">Know before the meeting</div><div class="platform-rung-icon"><div class="icon-circle icon-circle--success"><i class="ph-duotone ph-eye"></i></div></div><div class="platform-rung-name">SentinelSignals</div><div class="platform-rung-desc">Synthesizes what your existing tools already capture into actionable signals that span every system and department.</div><div class="platform-rung-detail">Your teams get synthesized briefs, answers on demand, and early warning alerts. Every function starts with the same context. No new systems to learn, no integration project, no change to who makes decisions.</div></div>
       <div class="platform-rung rung-next reveal" onclick="toggleRung(this)"><div class="platform-rung-tag">Act on it systematically</div><div class="platform-rung-icon"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-lightning"></i></div></div><div class="platform-rung-name">SignalCommand</div><div class="platform-rung-desc">Move from shared clarity to coordinated action with structured recommendations, staged execution, and approval workflows.</div><div class="platform-rung-detail">Structured recommendations with rationale, policy context, and alternatives. Approvals route to existing decision owners. Every action is scoped, staged, and traceable.</div></div>
       <div class="platform-rung rung-vision reveal" onclick="toggleRung(this)"><div class="platform-rung-tag">Earn autonomy with evidence</div><div class="platform-rung-icon"><div class="icon-circle icon-circle--warm"><i class="ph-duotone ph-shield-check"></i></div></div><div class="platform-rung-name">Governed Autonomy</div><div class="platform-rung-desc">Automation that proves itself before you give it more responsibility, earning expanded authority through measured performance.</div><div class="platform-rung-detail">Automation runs in shadow mode first, producing evidence against your own success criteria. Expansion happens when outcomes justify it. Authority is always reversible.</div></div>
     </div>
     <div class="platform-progress reveal"><div><div class="progress-dot active"></div></div><div><div class="progress-dot next"></div></div><div><div class="progress-dot future"></div></div></div>
-    <p class="platform-note reveal"><strong>Every step is an unlock, not a migration.</strong> Organizations that start with SentinelSignals today build the evidence base, the organizational muscle, and the operational calibration that make each next step faster and lower-risk. The compounding starts now.</p>
+    <p class="platform-note reveal"><strong>Every step is an unlock, not a migration.</strong> Organizations that start with SentinelSignals today build the evidence base, the organizational muscle, and the operational calibration that make each next step faster and lower risk. The compounding starts now.</p>
     </div>
   </div>
 </section>
@@ -503,23 +504,23 @@
         <!-- Output flow lines -->
         <g><path d="M436 88 Q530 40 600 40" stroke="url(#ol)" stroke-width="1" fill="none"><animate attributeName="stroke-dasharray" values="0,300;150,150;300,0" dur="3s" begin="1.2s" repeatCount="indefinite"/></path><path d="M436 100 Q530 100 600 100" stroke="url(#ol)" stroke-width="1" fill="none"><animate attributeName="stroke-dasharray" values="0,300;150,150;300,0" dur="3s" begin="1.5s" repeatCount="indefinite"/></path><path d="M436 112 Q530 160 600 160" stroke="url(#ol)" stroke-width="1" fill="none"><animate attributeName="stroke-dasharray" values="0,300;150,150;300,0" dur="3s" begin="1.8s" repeatCount="indefinite"/></path></g>
         <!-- Output boxes -->
-        <g><rect x="600" y="22" width="140" height="36" rx="8" stroke="#3ab87a" stroke-width="1" opacity="0.3" fill="rgba(58,184,122,0.04)"/><text x="612" y="44" font-family="JetBrains Mono" font-size="9" fill="#3ab87a" opacity="0.7" letter-spacing="1">SENTINEL BRIEFINGS</text><rect x="600" y="82" width="140" height="36" rx="8" stroke="#3ab87a" stroke-width="1" opacity="0.3" fill="rgba(58,184,122,0.04)"/><text x="625" y="104" font-family="JetBrains Mono" font-size="9" fill="#3ab87a" opacity="0.7" letter-spacing="1">SMART ALERTS</text><rect x="600" y="142" width="140" height="36" rx="8" stroke="#3ab87a" stroke-width="1" opacity="0.3" fill="rgba(58,184,122,0.04)"/><text x="622" y="164" font-family="JetBrains Mono" font-size="9" fill="#3ab87a" opacity="0.7" letter-spacing="1">ASK SENTINEL</text></g>
+        <g><rect x="600" y="22" width="140" height="36" rx="8" stroke="#3ab87a" stroke-width="1" opacity="0.3" fill="rgba(58,184,122,0.04)"/><text x="612" y="44" font-family="JetBrains Mono" font-size="9" fill="#3ab87a" opacity="0.7" letter-spacing="1">SENTINEL BRIEFINGS</text><rect x="600" y="82" width="140" height="36" rx="8" stroke="#3ab87a" stroke-width="1" opacity="0.3" fill="rgba(58,184,122,0.04)"/><text x="625" y="104" font-family="JetBrains Mono" font-size="9" fill="#3ab87a" opacity="0.7" letter-spacing="1">SMARTALERTS</text><rect x="600" y="142" width="140" height="36" rx="8" stroke="#3ab87a" stroke-width="1" opacity="0.3" fill="rgba(58,184,122,0.04)"/><text x="622" y="164" font-family="JetBrains Mono" font-size="9" fill="#3ab87a" opacity="0.7" letter-spacing="1">ASKSENTINEL</text></g>
         <!-- Labels -->
         <text x="30" y="222" font-family="JetBrains Mono" font-size="8" fill="#4a6080" letter-spacing="2">YOUR SYSTEMS</text><text x="345" y="222" font-family="JetBrains Mono" font-size="8" fill="#4a6080" letter-spacing="2">SENTINELSIGNALS</text><text x="620" y="222" font-family="JetBrains Mono" font-size="8" fill="#4a6080" letter-spacing="2">YOUR LEADERS</text>
       </svg>
     </div>
 
     <div class="ss-capabilities">
-      <div class="ss-cap reveal" onclick="this.classList.toggle('expanded')"><div class="ss-cap-icon"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-magnifying-glass-plus"></i></div></div><div class="ss-cap-name">AskSentinel</div><div class="ss-cap-what">Cross-system answers grounded in your connected data. 15-30 seconds.</div><div class="ss-cap-desc">SentinelSignals surfaces the signals. Your team drills into them: what's driving this pattern, which regions are affected, what changed since last week. Every answer is scoped to your configured intelligence, grounded in evidence, and consistent regardless of which department asks.</div><div class="ss-cap-hint"></div></div>
-      <div class="ss-cap reveal" onclick="this.classList.toggle('expanded')"><div class="ss-cap-icon"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-pulse"></i></div></div><div class="ss-cap-name">Sentinel Briefings</div><div class="ss-cap-what">Proactive intelligence. Before the meeting.</div><div class="ss-cap-desc">Synthesized narratives delivered on your cadence, by function, configured per user. Every stakeholder gets the same picture at the same time. Walk in aligned. Decide faster.</div><div class="ss-cap-hint"></div></div>
-      <div class="ss-cap reveal" onclick="this.classList.toggle('expanded')"><div class="ss-cap-icon"><div class="icon-circle icon-circle--warm"><i class="ph-duotone ph-bell-ringing"></i></div></div><div class="ss-cap-name">SmartAlerts</div><div class="ss-cap-what">Compound patterns. Early warning.</div><div class="ss-cap-desc">Surfaces patterns that no single system can detect, before they become crises. A promo is driving velocity on a category, but return rates on those same SKUs are climbing, and the inventory position is already thin going into next week's campaign. That pattern lives across POS, promo, returns, and inventory data. Flagged while there's still time to coordinate a response.</div><div class="ss-cap-hint"></div></div>
+      <div class="ss-cap reveal"><div class="ss-cap-icon"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-magnifying-glass-plus"></i></div></div><div class="ss-cap-name">AskSentinel</div><div class="ss-cap-what">Answers grounded in all your connected data. 15 to 30 seconds.</div><div class="ss-cap-desc">SentinelSignals surfaces the signals. Your team drills into them: what's driving this pattern, which regions are affected, what changed since last week. Every answer is scoped to your configured intelligence, grounded in evidence, and consistent regardless of which department asks.</div><div class="ss-cap-hint"></div></div>
+      <div class="ss-cap reveal"><div class="ss-cap-icon"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-pulse"></i></div></div><div class="ss-cap-name">Sentinel Briefings</div><div class="ss-cap-what">Proactive intelligence. Before the meeting.</div><div class="ss-cap-desc">Synthesized narratives delivered on your cadence, by function, configured per user. Every stakeholder gets the same picture at the same time. Walk in aligned. Decide faster.</div><div class="ss-cap-hint"></div></div>
+      <div class="ss-cap reveal"><div class="ss-cap-icon"><div class="icon-circle icon-circle--warm"><i class="ph-duotone ph-bell-ringing"></i></div></div><div class="ss-cap-name">SmartAlerts</div><div class="ss-cap-what">Compound patterns. Early warning.</div><div class="ss-cap-desc">Surfaces patterns that no single system can detect, before they become crises. A promo is driving velocity on a category, but return rates on those same SKUs are climbing, and the inventory position is already thin going into next week's campaign. That pattern lives across POS, promo, returns, and inventory data. Flagged while there's still time to coordinate a response.</div><div class="ss-cap-hint"></div></div>
     </div>
 
     <div class="deploy-strip reveal">
-      <div class="deploy-item"><i class="ph-duotone ph-gear-six"></i><div class="deploy-text">Configuration-Only</div></div>
+      <div class="deploy-item"><i class="ph-duotone ph-gear-six"></i><div class="deploy-text">Configuration Only</div></div>
       <div class="deploy-item"><i class="ph-duotone ph-calendar-check"></i><div class="deploy-text">Weeks to Value</div></div>
-      <div class="deploy-item"><i class="ph-duotone ph-plugs-connected"></i><div class="deploy-text">Pre-Built Integrations</div></div>
-      <div class="deploy-item"><i class="ph-duotone ph-arrows-counter-clockwise"></i><div class="deploy-text">No Rip-and-Replace</div></div>
+      <div class="deploy-item"><i class="ph-duotone ph-plugs-connected"></i><div class="deploy-text">Prebuilt Integrations</div></div>
+      <div class="deploy-item"><i class="ph-duotone ph-arrows-counter-clockwise"></i><div class="deploy-text">No Rip and Replace</div></div>
     </div>
   </div>
 </section>
@@ -530,10 +531,10 @@
     <div class="tag reveal">Built For</div>
     <h2 class="reveal">Operators who've already<br>done the hard work.</h2>
     <div class="builtfor-grid">
-      <div class="builtfor-item reveal" onclick="this.classList.toggle('expanded')"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-storefront"></i></div><div class="builtfor-label">Your Operation</div><div class="builtfor-headline">Retailers with real operational complexity.</div><div class="builtfor-detail">Whether multi-store, omnichannel, or pure-play e-commerce. Allocation trade-offs, markdown timing, promotional commitments, replenishment decisions, and fulfillment coordination that directly move the P&L.</div><div class="expand-hint"></div></div>
-      <div class="builtfor-item reveal" onclick="this.classList.toggle('expanded')"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-database"></i></div><div class="builtfor-label">Your Systems</div><div class="builtfor-headline">Mature systems already in place.</div><div class="builtfor-detail">ERP, POS, e-commerce, EDI, supply chain. The internal signals exist. We also bring in what your systems can't see: supplier data, reviews, social signals, weather, local events. The difference is not more reporting. It's intelligence that reasons across all of it and finds the patterns no single system was built to detect.</div><div class="expand-hint"></div></div>
-      <div class="builtfor-item reveal" onclick="this.classList.toggle('expanded')"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-users-three"></i></div><div class="builtfor-label">Your Team</div><div class="builtfor-headline">Experienced operational leaders with clear decision rights.</div><div class="builtfor-detail">You're not looking to replace your people. You're looking to give them the context, the leverage, and the time back to focus on the work that drives the most value.</div><div class="expand-hint"></div></div>
-      <div class="builtfor-item reveal" onclick="this.classList.toggle('expanded')"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-seal-check"></i></div><div class="builtfor-label">Your Standard</div><div class="builtfor-headline">Evidence over claims. Proof before expansion.</div><div class="builtfor-detail">You want a partner that starts by listening, proves value against your own success criteria, and earns the right to do more based on measured outcomes, not slide decks.</div><div class="expand-hint"></div></div>
+      <div class="builtfor-item reveal"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-storefront"></i></div><div class="builtfor-label">Your Operation</div><div class="builtfor-headline">Retailers with real operational complexity.</div><div class="builtfor-detail">Whether multistore, omnichannel, or pure play e-commerce. Allocation tradeoffs, markdown timing, promotional commitments, replenishment decisions, and fulfillment coordination that directly move the P&L.</div><div class="expand-hint"></div></div>
+      <div class="builtfor-item reveal"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-database"></i></div><div class="builtfor-label">Your Systems</div><div class="builtfor-headline">Mature systems already in place.</div><div class="builtfor-detail">ERP, POS, e-commerce, EDI, supply chain. The internal signals exist. We also bring in what your systems can't see: supplier data, reviews, social signals, weather, local events. The difference is not more reporting. It's intelligence that reasons across all of it and finds the patterns no single system was built to detect.</div><div class="expand-hint"></div></div>
+      <div class="builtfor-item reveal"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-users-three"></i></div><div class="builtfor-label">Your Team</div><div class="builtfor-headline">Experienced operational leaders with clear decision rights.</div><div class="builtfor-detail">You're not looking to replace your people. You're looking to give them the context, the leverage, and the time back to focus on the work that drives the most value.</div><div class="expand-hint"></div></div>
+      <div class="builtfor-item reveal"><div class="icon-circle icon-circle--periwinkle"><i class="ph-duotone ph-seal-check"></i></div><div class="builtfor-label">Your Standard</div><div class="builtfor-headline">Evidence over claims. Proof before expansion.</div><div class="builtfor-detail">You want a partner that starts by listening, proves value against your own success criteria, and earns the right to do more based on measured outcomes, not slide decks.</div><div class="expand-hint"></div></div>
     </div>
   </div>
 </section>
@@ -590,12 +591,13 @@
     <div class="closing-line reveal">Your systems already have the signals.</div>
     <div class="closing-line reveal">Your teams already make the decisions.</div>
     <div class="closing-accent reveal">The layer between them is the unlock.</div>
+    <a href="#founder" class="btn-primary reveal" style="margin-top:32px; display:inline-block;">Start a Conversation →</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo"><img src="CFAI_Logo_Dark.png" alt="ClearFrontier AI"></div>
-  <div class="footer-text">© 2026 ClearFrontier AI™ LLC &nbsp;·&nbsp; New York | Miami | Jacksonville | Tampa, FL &nbsp;·&nbsp; explore@clearfrontier.ai &nbsp;·&nbsp; clearfrontier.ai</div>
+  <div class="footer-text">© 2026 ClearFrontier AI™ LLC &nbsp;·&nbsp; New York | Miami | Jacksonville | Tampa, FL &nbsp;·&nbsp; <a href="mailto:explore@clearfrontier.ai" style="color:var(--text-muted); text-decoration:none;">explore@clearfrontier.ai</a> &nbsp;·&nbsp; <a href="https://clearfrontier.ai" style="color:var(--text-muted); text-decoration:none;">clearfrontier.ai</a></div>
 </footer>
 
 <script>
@@ -616,10 +618,17 @@ window.addEventListener('DOMContentLoaded', () => {
   if (firstRung) firstRung.classList.add('expanded');
 });
 
-document.querySelectorAll('.ss-cap, .builtfor-item').forEach(card => {
+document.querySelectorAll('.ss-cap').forEach(card => {
   card.addEventListener('click', () => {
     const was = card.classList.contains('expanded');
-    document.querySelectorAll('.ss-cap, .builtfor-item').forEach(c => c.classList.remove('expanded'));
+    document.querySelectorAll('.ss-cap').forEach(c => c.classList.remove('expanded'));
+    if (!was) card.classList.add('expanded');
+  });
+});
+document.querySelectorAll('.builtfor-item').forEach(card => {
+  card.addEventListener('click', () => {
+    const was = card.classList.contains('expanded');
+    document.querySelectorAll('.builtfor-item').forEach(c => c.classList.remove('expanded'));
     if (!was) card.classList.add('expanded');
   });
 });
